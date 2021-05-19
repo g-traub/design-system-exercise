@@ -1,1 +1,1 @@
-# design-system-exercice
+# design-system-exercise
