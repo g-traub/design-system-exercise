@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="buttonInterface">{{ text }}</button>
+    <button :class="buttonInterface" :disabled="disabled">{{ text }}</button>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ export default {
   props: {
     text: { type: String, required: true },
     interface: { type: String, required: true },
+    disabled: { type: Boolean },
   },
   computed: {
     buttonInterface() {
@@ -28,6 +29,8 @@ export default {
   height: 50px;
   padding: 15px 25px;
   border-radius: 5px;
+  margin: 5px;
+  transition: 0.2s all;
 
   &__style {
     &--outline {

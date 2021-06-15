@@ -2,7 +2,9 @@
   <!--  <router-view />-->
   <div>
     <Button text="Hello world !" interface="fill"></Button>
+    <Button text="Hello world !" interface="fill" disabled></Button>
     <Button text="Hello world !" interface="outline"></Button>
+    <Button text="Hello world !" interface="outline" disabled></Button>
   </div>
 </template>
 
