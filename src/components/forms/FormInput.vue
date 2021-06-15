@@ -94,7 +94,6 @@ export default {
 .container {
   display: inline-block;
   position: relative;
-  margin: 2rem;
   display: flex;
   min-width: 200px;
   max-width: 320px;
@@ -105,8 +104,6 @@ export default {
   right: $spacer--2;
   top: 50%;
   transform: translateY(-50%);
-
-  color: $grey--dark;
 }
 
 .form-input {
@@ -153,6 +150,10 @@ export default {
 
   &--hasIcon {
     padding-right: $spacer--6;
+
+    & + .icon.icon {
+      color: $grey--dark;
+    }
   }
 }
 </style>
