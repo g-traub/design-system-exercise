@@ -7,11 +7,15 @@
           >A new tool that blends your everyday work apps into one. It's the
           all-in-one workspace for you and your team.
         </Subheading>
-        <Link class="card__header--link">Don’t have an account ? Sign up</Link>
+        <Link class="card__header--link" to="/signup"
+          >Don’t have an account ? Sign up</Link
+        >
       </section>
 
       <form class="card__form">
-        <Link class="card__form--link">Don’t remember your password ?</Link>
+        <Link class="card__form--link" to="/login/reset-password"
+          >Don’t remember your password ?</Link
+        >
         <Button variant="primary">Log in</Button>
       </form>
     </Card>
@@ -20,10 +24,16 @@
 
 <style lang="scss">
 .login {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 50px;
+}
+
+@media (min-width: 600px) {
+  .login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>
 
