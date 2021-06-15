@@ -1,6 +1,6 @@
 <template>
-  <section class="login">
-    <Card class="login__card card">
+  <section class="page">
+    <Card class="page__card card">
       <section class="card__header">
         <Title class="card__header--title">Login</Title>
         <Subheading class="card__header--subheading"
@@ -22,20 +22,7 @@
   </section>
 </template>
 
-<style lang="scss">
-.login {
-  padding-top: 50px;
-}
-
-@media (min-width: 600px) {
-  .login {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-</style>
+<style lang="scss"></style>
 
 <script>
 import Card from "@/components/Card";
