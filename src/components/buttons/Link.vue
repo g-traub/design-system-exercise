@@ -13,8 +13,8 @@ import VIcon from "@/components/VIcon";
 export default {
   components: { VIcon },
   props: {
-    href: { type: String, required: true },
-    target: { type: String, required: true },
+    href: { type: String, default: null },
+    target: { type: String, default: null },
     iconLeft: { type: String, default: null },
     iconRight: { type: String, default: null },
   },
@@ -26,7 +26,6 @@ export default {
 @import "../../assets/scss/utils/vars/typography";
 
 .link {
-  margin: 5px;
   display: flex;
   align-items: center;
 
