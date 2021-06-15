@@ -7,12 +7,16 @@
 <script>
 export default {
   props: {
-    interface: { type: String, required: true },
+    variant: {
+      type: String,
+      required: true,
+      validator: (value) => value === "primary" || value === "secondary",
+    },
     disabled: { type: Boolean },
   },
   computed: {
     buttonInterface() {
-      return `button button__style--${this.interface}`;
+      return `button button__style--${this.variant}`;
     },
   },
 };
@@ -25,14 +29,12 @@ export default {
 .button {
   @include text-button;
 
-  height: 50px;
   padding: 15px 25px;
   border-radius: 5px;
-  margin: 5px;
   transition: 0.2s all;
 
   &__style {
-    &--outline {
+    &--secondary {
       border: 1px solid $grey--medium;
       color: $primary;
       background-color: white;
@@ -51,7 +53,7 @@ export default {
       }
     }
 
-    &--fill {
+    &--primary {
       border: none;
       background-color: $primary;
       color: $text--light;
