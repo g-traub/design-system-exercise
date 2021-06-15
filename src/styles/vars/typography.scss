@@ -1,0 +1,81 @@
+/* Type scale */
+$text--s: 12px;
+$text--m: 16px;
+$text--l: 21px;
+$text--xl: 28px;
+$text--2xl: 38px;
+$text--3xl: 51px;
+
+/* Fonts */
+$font--primary: "Poppins", sans-serif;
+$font--secondary: "Fira Sans", sans-serif;
+
+/* Text properties*/
+$lineheight--s: 1.4;
+$lineheight--m: 1.6;
+
+/* Variants */
+@mixin text-display {
+  font-size: $text--3xl;
+  font-family: $font--primary;
+  font-weight: bold;
+  letter-spacing: -0.02rem;
+  line-height: $lineheight--s;
+}
+
+@mixin text-heading--l {
+  font-size: $text--2xl;
+  font-family: $font--primary;
+  font-weight: bold;
+  line-height: $lineheight--s;
+}
+
+@mixin text-heading--m {
+  font-size: $text--xl;
+  font-family: $font--primary;
+  font-weight: bold;
+  line-height: $lineheight--s;
+}
+
+@mixin text-heading--s {
+  font-size: $text--l;
+  font-family: $font--primary;
+  font-weight: bold;
+  line-height: $lineheight--s;
+}
+
+@mixin text-subheading {
+  font-size: $text--l;
+  font-family: $font--secondary;
+  font-weight: normal;
+  line-height: $lineheight--s;
+}
+
+@mixin text-body {
+  font-size: $text--m;
+  font-family: $font--secondary;
+  font-weight: 300;
+  line-height: $lineheight--m;
+}
+
+@mixin text-body--bold {
+  font-size: $text--m;
+  font-family: $font--secondary;
+  font-weight: 500;
+  line-height: $lineheight--m;
+}
+
+@mixin text-button {
+  font-size: $text--m;
+  font-family: $font--secondary;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  font-variant: small-caps;
+}
+
+@mixin text-small {
+  font-size: $text--s;
+  font-family: $font--secondary;
+  font-weight: normal;
+  line-height: $lineheight--m;
+}
