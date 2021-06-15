@@ -2,7 +2,7 @@
   <a class="link" :href="href" target="_blank">
     <div class="link__content">
       <VIcon :name="iconLeft" stroke-width="3"></VIcon>
-      {{ text }}
+      <slot></slot>
       <VIcon :name="iconRight" stroke-width="3"></VIcon>
     </div>
   </a>
@@ -13,7 +13,6 @@ import VIcon from "@/components/VIcon";
 export default {
   components: { VIcon },
   props: {
-    text: { type: String, required: true },
     href: { type: String, required: true },
     iconLeft: { type: String, default: null },
     iconRight: { type: String, default: null },

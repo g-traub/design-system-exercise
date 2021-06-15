@@ -1,11 +1,12 @@
 <template>
-  <button :class="buttonInterface" :disabled="disabled">{{ text }}</button>
+  <button :class="buttonInterface" :disabled="disabled">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
   props: {
-    text: { type: String, required: true },
     interface: { type: String, required: true },
     disabled: { type: Boolean },
   },
