@@ -1,0 +1,24 @@
+@import 'utils/vars/typography';
+@import 'utils/vars/colors';
+
+html {
+  font-family: $font--secondary;
+  font-size: 100%;
+  line-height: $lineheight--m;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: $text--dark;
+}
+
+
+button {
+  cursor: pointer;
+}
