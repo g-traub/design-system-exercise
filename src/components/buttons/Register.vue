@@ -15,8 +15,8 @@ export default {
   props: {
     text: { type: String, required: true },
     href: { type: String, required: true },
-    iconLeft: { type: String },
-    iconRight: { type: String },
+    iconLeft: { type: String, default: null },
+    iconRight: { type: String, default: null },
   },
 };
 </script>
