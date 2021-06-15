@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <button :class="buttonInterface" :disabled="disabled">{{ text }}</button>
-  </div>
+  <button :class="buttonInterface" :disabled="disabled">{{ text }}</button>
 </template>
 
 <script>
