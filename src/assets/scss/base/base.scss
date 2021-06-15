@@ -1,7 +1,8 @@
-@import 'utils/vars/typography';
-@import 'utils/vars/colors';
+@import "utils/vars/typography";
+@import "utils/vars/colors";
 
 html {
+  box-sizing: border-box;
   font-family: $font--secondary;
   font-size: 100%;
   line-height: $lineheight--m;
@@ -10,6 +11,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 body,
 html {
   width: 100%;
@@ -17,7 +23,6 @@ html {
   padding: 0;
   color: $text--dark;
 }
-
 
 button {
   cursor: pointer;
