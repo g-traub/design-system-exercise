@@ -1,11 +1,11 @@
 <template>
-  <a class="link" :href="href" :target="target">
+  <router-link class="link" :to="to">
     <div class="link__content">
       <VIcon :name="iconLeft" stroke-width="3"></VIcon>
       <slot></slot>
       <VIcon :name="iconRight" stroke-width="3"></VIcon>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script>
@@ -13,8 +13,8 @@ import VIcon from "@/components/VIcon";
 export default {
   components: { VIcon },
   props: {
-    href: { type: String, required: true },
-    target: { type: String, required: true },
+    to: { type: String, default: null },
+    // target: { type: String, default: null },
     iconLeft: { type: String, default: null },
     iconRight: { type: String, default: null },
   },
@@ -26,7 +26,6 @@ export default {
 @import "../../assets/scss/utils/vars/typography";
 
 .link {
-  margin: 5px;
   display: flex;
   align-items: center;
 
