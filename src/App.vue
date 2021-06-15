@@ -1,6 +1,9 @@
 <template>
   <!--  <router-view />-->
-  <Button text="Hello world !"></Button>
+  <div>
+    <Button text="Hello world !" interface="fill"></Button>
+    <Button text="Hello world !" interface="outline"></Button>
+  </div>
 </template>
 
 <style lang="scss" src="./assets/scss/styles.scss"></style>

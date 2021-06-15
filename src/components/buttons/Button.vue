@@ -1,6 +1,22 @@
 <template>
-  <button class="button button__color--blue">{{ text }}</button>
+  <div>
+    <button :class="buttonInterface">{{ text }}</button>
+  </div>
 </template>
+
+<script>
+export default {
+  props: {
+    text: { type: String, required: true },
+    interface: { type: String, required: true },
+  },
+  computed: {
+    buttonInterface() {
+      return `button button__style--${this.interface}`;
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 @import "../../assets/scss/utils/vars/colors";
@@ -9,35 +25,48 @@
 .button {
   @include text-button;
 
-  border: none;
   height: 50px;
   padding: 15px 25px;
   border-radius: 5px;
 
-  &:hover {
-    background-color: $primary--dark;
-  }
+  &__style {
+    &--outline {
+      border: 1px solid $grey--medium;
+      color: $primary;
+      background-color: white;
 
-  &:focus {
-    background-color: $primary;
-    box-shadow: 0 0 1px 3px rgba(64, 125, 208, 0.35);
-  }
+      &:hover {
+        border-color: $primary;
+      }
 
-  &:disabled {
-    background-color: $primary--light;
-  }
+      &:focus {
+        box-shadow: 0 0 1px 3px rgba(64, 125, 208, 0.35);
+      }
 
-  &__color {
-    &--blue {
+      &:disabled {
+        border: 1px solid $grey--medium;
+        color: $primary--light;
+      }
+    }
+
+    &--fill {
+      border: none;
       background-color: $primary;
       color: $text--light;
+
+      &:hover {
+        background-color: $primary--dark;
+      }
+
+      &:focus {
+        background-color: $primary;
+        box-shadow: 0 0 1px 3px rgba(64, 125, 208, 0.35);
+      }
+
+      &:disabled {
+        background-color: $primary--light;
+      }
     }
   }
 }
 </style>
-
-<script>
-export default {
-  props: ["text"],
-};
-</script>
