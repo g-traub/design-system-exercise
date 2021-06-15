@@ -1,5 +1,5 @@
 <template>
-  <a class="link" :href="href" target="_blank">
+  <a class="link" :href="href" :target="target">
     <div class="link__content">
       <VIcon :name="iconLeft" stroke-width="3"></VIcon>
       <slot></slot>
@@ -14,6 +14,7 @@ export default {
   components: { VIcon },
   props: {
     href: { type: String, required: true },
+    target: { type: String, required: true },
     iconLeft: { type: String, default: null },
     iconRight: { type: String, default: null },
   },
