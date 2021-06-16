@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <input
+      :id="id"
       :class="inputClasses"
       :value="modelValue"
       :type="type"
@@ -25,6 +26,10 @@ export default {
   name: "FormInput",
   props: {
     modelValue: {
+      type: String,
+      required: true,
+    },
+    id: {
       type: String,
       required: true,
     },
@@ -92,7 +97,6 @@ export default {
 @use "sass:color";
 
 .container {
-  display: inline-block;
   position: relative;
   display: flex;
   min-width: 200px;

@@ -13,10 +13,34 @@
       </section>
 
       <form class="card__form">
+        <FormGroup label="Email" label-for="email" class="card__form--input">
+          <FormInput
+            id="email"
+            v-model="email"
+            type="email"
+            required
+            placeholder="example@email.com"
+          ></FormInput>
+        </FormGroup>
+
+        <FormGroup
+          label="Password"
+          label-for="password"
+          class="card__form--input"
+        >
+          <FormInput
+            id="password"
+            v-model="password"
+            type="password"
+            required
+            placeholder=""
+          ></FormInput>
+        </FormGroup>
+
         <Link class="card__form--link" to="/login/reset-password"
           >Don’t remember your password ?</Link
         >
-        <Button variant="primary">Log in</Button>
+        <Button variant="primary" class="card__form--button">Log in</Button>
       </form>
     </Card>
   </section>
@@ -30,7 +54,15 @@ import Title from "@/components/texts/Title";
 import Subheading from "@/components/texts/Subheading";
 import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
+import FormGroup from "@/components/forms/FormGroup";
+import FormInput from "@/components/forms/FormInput";
 export default {
-  components: { Button, Link, Subheading, Title, Card },
+  components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
+  data: () => {
+    return {
+      email: "",
+      password: "",
+    };
+  },
 };
 </script>

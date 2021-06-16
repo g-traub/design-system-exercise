@@ -14,7 +14,19 @@
       </section>
 
       <form class="card__form">
-        <Button variant="primary">Reset password</Button>
+        <FormGroup label="Email" label-for="email" class="card__form--input">
+          <FormInput
+            id="email"
+            v-model="email"
+            type="email"
+            required
+            placeholder="example@email.com"
+          ></FormInput>
+        </FormGroup>
+
+        <Button class="card__form--button" variant="primary"
+          >Reset password</Button
+        >
       </form>
     </Card>
   </section>
@@ -28,7 +40,9 @@ import Title from "@/components/texts/Title";
 import Subheading from "@/components/texts/Subheading";
 import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
+import FormInput from "@/components/forms/FormInput";
+import FormGroup from "@/components/forms/FormGroup";
 export default {
-  components: { Button, Link, Subheading, Title, Card },
+  components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
 };
 </script>
