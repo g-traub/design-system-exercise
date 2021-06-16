@@ -1,45 +1,43 @@
-import MyButton from './Button.vue';
+import Button from "./Button.vue";
 
 export default {
-  title: 'Example/Button',
-  component: MyButton,
+  title: "Components:Button",
+  component: Button,
+  //👇 Creates specific argTypes with options
   argTypes: {
-    backgroundColor: { control: 'color' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
-    onClick: {},
+    propertyA: {
+      control: { type: "string" }, // automatically inferred when 'options' is defined
+    },
+    propertyB: {
+      options: ["Another Item One", "Another Item Two", "Another Item Three"],
+    },
   },
 };
 
-const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
-  components: { MyButton },
-  // The story's `args` need to be mapped into the template through the `setup()` method
-  setup() {
-    return { args };
-  },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<my-button v-bind="args" />',
-});
+//👇 Some function to demonstrate the behavior
+// const someFunction = (valuePropertyA, valuePropertyB) => {
+// Makes some computations and returns something
+// };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+const Template = (args) => {
+  //👇 Assigns the function result to a variable
+  // const functionResult = someFunction(args.propertyA, args.propertyB);
+  console.log(args);
+  return {
+    components: { Button },
+    setup() {
+      //👇 The args will now be passed down to the template
+      return {
+        args,
+      };
+    },
+    template:
+      '<Button :variant="args.variant" :disabled="args.disabled">{{args.variant}}</button>',
+  };
 };
 
 export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+Large.parameters = {
+  controls: { hideNoControlsWarning: true },
 };
