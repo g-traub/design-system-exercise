@@ -20,6 +20,7 @@
             type="email"
             required
             placeholder="example@email.com"
+            :state="isEmailValid"
           ></FormInput>
         </FormGroup>
 
@@ -33,20 +34,22 @@
             v-model="password"
             type="password"
             required
-            placeholder=""
           ></FormInput>
         </FormGroup>
 
         <Link class="card__form--link" to="/login/reset-password"
           >Don’t remember your password ?</Link
         >
-        <Button variant="primary" class="card__form--button">Log in</Button>
+        <Button
+          :disabled="!isFormValid"
+          variant="primary"
+          class="card__form--button"
+          >log in</Button
+        >
       </form>
     </Card>
   </section>
 </template>
-
-<style lang="scss"></style>
 
 <script>
 import Card from "@/components/Card";
@@ -56,6 +59,8 @@ import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
 import FormGroup from "@/components/forms/FormGroup";
 import FormInput from "@/components/forms/FormInput";
+import { emailValidator } from "@/utils/validation";
+
 export default {
   components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
   data: () => {
@@ -63,6 +68,14 @@ export default {
       email: "",
       password: "",
     };
+  },
+  computed: {
+    isEmailValid() {
+      return this.email ? emailValidator(this.email) : null;
+    },
+    isFormValid() {
+      return this.isEmailValid && this.password;
+    },
   },
 };
 </script>

@@ -20,6 +20,7 @@
             type="email"
             required
             placeholder="example@email.com"
+            :state="isEmailValid"
           ></FormInput>
         </FormGroup>
 
@@ -28,6 +29,7 @@
           label-for="password"
           class="card__form--input"
           feedback="Minimun 8 characters"
+          :state="isPasswordValid"
         >
           <FormInput
             id="password"
@@ -35,16 +37,20 @@
             type="password"
             required
             placeholder=""
+            :state="isPasswordValid"
           ></FormInput>
         </FormGroup>
 
-        <Button class="card__form--button" variant="primary">Sign up</Button>
+        <Button
+          :disabled="!isFormValid"
+          class="card__form--button"
+          variant="primary"
+          >sign up</Button
+        >
       </form>
     </Card>
   </section>
 </template>
-
-<style lang="scss"></style>
 
 <script>
 import Card from "@/components/Card";
@@ -54,6 +60,9 @@ import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
 import FormInput from "@/components/forms/FormInput";
 import FormGroup from "@/components/forms/FormGroup";
+
+import { emailValidator, newPasswordValidator } from "@/utils/validation";
+
 export default {
   components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
   data: () => {
@@ -61,6 +70,17 @@ export default {
       email: "",
       password: "",
     };
+  },
+  computed: {
+    isEmailValid() {
+      return this.email ? emailValidator(this.email) : null;
+    },
+    isPasswordValid() {
+      return this.password ? newPasswordValidator(this.password) : null;
+    },
+    isFormValid() {
+      return this.isEmailValid && this.isPasswordValid;
+    },
   },
 };
 </script>

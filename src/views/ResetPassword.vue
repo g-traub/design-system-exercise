@@ -21,18 +21,20 @@
             type="email"
             required
             placeholder="example@email.com"
+            :state="isEmailValid"
           ></FormInput>
         </FormGroup>
 
-        <Button class="card__form--button" variant="primary"
-          >Reset password</Button
+        <Button
+          :disabled="!isEmailValid"
+          class="card__form--button"
+          variant="primary"
+          >reset password</Button
         >
       </form>
     </Card>
   </section>
 </template>
-
-<style lang="scss"></style>
 
 <script>
 import Card from "@/components/Card";
@@ -42,7 +44,20 @@ import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
 import FormInput from "@/components/forms/FormInput";
 import FormGroup from "@/components/forms/FormGroup";
+
+import { emailValidator } from "@/utils/validation";
+
 export default {
   components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
+  data() {
+    return {
+      email: "",
+    };
+  },
+  computed: {
+    isEmailValid() {
+      return this.email ? emailValidator(this.email) : null;
+    },
+  },
 };
 </script>
