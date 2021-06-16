@@ -51,14 +51,14 @@
 </template>
 
 <script>
-import Card from "@/components/Card";
-import Title from "@/components/texts/Title";
-import Subheading from "@/components/texts/Subheading";
-import Link from "@/components/buttons/Link";
-import Button from "@/components/buttons/Button";
-import FormInput from "@/components/forms/FormInput";
+import Card from "@/components/Card/Card";
+import Title from "@/components/texts/Title/Title";
+import Subheading from "@/components/texts/Subheading/Subheading";
+import Link from "@/components/Actions/Link/Link";
+import Button from "@/components/Actions/Button/Button";
+import FormInput from "@/components/forms/FormInput/FormInput";
 import FormPassword from "@/components/forms/FormPassword";
-import FormGroup from "@/components/forms/FormGroup";
+import FormGroup from "@/components/forms/FormGroup/FormGroup";
 
 import { emailValidator, newPasswordValidator } from "@/utils/validation";
 

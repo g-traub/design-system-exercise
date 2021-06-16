@@ -37,16 +37,15 @@
 </template>
 
 <script>
-import Card from "@/components/Card";
-import Title from "@/components/texts/Title";
-import Subheading from "@/components/texts/Subheading";
-import Link from "@/components/buttons/Link";
-import Button from "@/components/buttons/Button";
-import FormInput from "@/components/forms/FormInput";
-import FormGroup from "@/components/forms/FormGroup";
+import Card from "@/components/Card/Card";
+import Title from "@/components/texts/Title/Title";
+import Subheading from "@/components/texts/Subheading/Subheading";
+import Link from "@/components/Actions/Link/Link";
+import Button from "@/components/Actions/Button/Button";
+import FormInput from "@/components/forms/FormInput/FormInput";
+import FormGroup from "@/components/forms/FormGroup/FormGroup";
 
 import { emailValidator } from "@/utils/validation";
-
 export default {
   components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
   data() {

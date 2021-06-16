@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import FormInput from "@/components/forms/FormInput.vue";
+import FormInput from "@/components/forms/FormInput/FormInput";
 
 export default {
   name: "FormPassword",

@@ -91,9 +91,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/utils/vars/spacing";
-@import "../../assets/scss/utils/vars/colors";
-@import "../../assets/scss/utils/vars/typography";
+@import "../../../assets/scss/utils/vars/spacing";
+@import "../../../assets/scss/utils/vars/colors";
+@import "../../../assets/scss/utils/vars/typography";
 
 @use "sass:color";
 
