@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import icons from "./../assets/icons/icons.json";
+import icons from "../../assets/icons/icons.json";
 import { h } from "vue";
 
 const components = Object.entries(icons).reduce(

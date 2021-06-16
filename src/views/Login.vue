@@ -25,7 +25,7 @@
 <style lang="scss"></style>
 
 <script>
-import Card from "@/components/Card";
+import Card from "@/components/Card/Card";
 import Title from "@/components/texts/Title/Title";
 import Subheading from "@/components/texts/Subheading/Subheading";
 import Link from "@/components/buttons/Link/Link";

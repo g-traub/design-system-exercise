@@ -41,7 +41,7 @@
 </style>
 
 <script>
-import VIcon from "@/components/VIcon";
+import VIcon from "@/components/VIcon/VIcon";
 export default {
   components: { VIcon },
   props: {
