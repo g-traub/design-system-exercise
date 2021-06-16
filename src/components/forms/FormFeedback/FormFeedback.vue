@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss">
-@import "../assets/scss/utils/vars/colors";
+@import "../../../assets/scss/utils/vars/colors";
 
 .validator {
   display: flex;
