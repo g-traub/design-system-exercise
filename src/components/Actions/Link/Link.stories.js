@@ -1,4 +1,4 @@
-import Link from "@/components/buttons/Link/Link";
+import Link from "@/components/Actions/Link/Link";
 
 export default {
   title: "Link",

@@ -92,7 +92,6 @@ export default {
 @use "sass:color";
 
 .container {
-  display: inline-block;
   position: relative;
   display: flex;
   min-width: 200px;
