@@ -23,8 +23,8 @@
 
 <script>
 import Card from "@/components/Card";
-import Title from "@/components/texts/Title";
-import Subheading from "@/components/texts/Subheading";
+import Title from "@/components/texts/Title/Title";
+import Subheading from "@/components/texts/Subheading/Subheading";
 import Link from "@/components/buttons/Link/Link";
 import Button from "@/components/buttons/Button/Button";
 export default {

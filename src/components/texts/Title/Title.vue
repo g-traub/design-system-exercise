@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-@import "../../assets/scss/utils/vars/typography";
+@import "../../../assets/scss/utils/vars/typography";
 
 .title {
   @include text-heading--l;
