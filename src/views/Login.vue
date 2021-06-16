@@ -28,7 +28,7 @@
 import Card from "@/components/Card";
 import Title from "@/components/texts/Title";
 import Subheading from "@/components/texts/Subheading";
-import Link from "@/components/buttons/Link";
+import Link from "@/components/buttons/Link/Link";
 import Button from "@/components/buttons/Button/Button";
 export default {
   components: { Button, Link, Subheading, Title, Card },

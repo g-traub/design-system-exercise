@@ -22,8 +22,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/utils/vars/colors";
-@import "../../assets/scss/utils/vars/typography";
+@import "../../../assets/scss/utils/vars/colors";
+@import "../../../assets/scss/utils/vars/typography";
 
 .link {
   display: flex;
