@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import icons from "./../assets/icons/icons.json";
+import icons from "../../assets/icons/icons.json";
 import { h } from "vue";
 
 const components = Object.entries(icons).reduce(
@@ -17,7 +17,7 @@ const components = Object.entries(icons).reduce(
         props: ["size", "strokeWidth"],
         render() {
           return h("div", {
-            style: { display: "inline-block" },
+            style: { display: "inline-flex" },
             innerHTML: toSvg(currValue, {
               width: this.size,
               height: this.size,

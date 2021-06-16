@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import VIcon from "@/components/VIcon";
+import VIcon from "@/components/VIcon/VIcon";
 export default {
   components: { VIcon },
   props: {
@@ -22,15 +22,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/utils/vars/colors";
-@import "../../assets/scss/utils/vars/typography";
+@import "../../../assets/scss/utils/vars/colors";
+@import "../../../assets/scss/utils/vars/typography";
 
 .link {
-  display: flex;
-  align-items: center;
-
   &__content {
     color: $primary;
+    display: flex;
+    align-items: center;
 
     &:hover,
     &:visited,

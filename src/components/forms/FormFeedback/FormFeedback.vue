@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss">
-@import "../assets/scss/utils/vars/colors";
+@import "../../../assets/scss/utils/vars/colors";
 
 .validator {
   display: flex;
@@ -41,7 +41,7 @@
 </style>
 
 <script>
-import VIcon from "@/components/VIcon";
+import VIcon from "@/components/VIcon/VIcon";
 export default {
   components: { VIcon },
   props: {
