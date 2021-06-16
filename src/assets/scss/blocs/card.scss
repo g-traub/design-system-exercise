@@ -19,8 +19,18 @@
 
 
   &__form {
+    padding-top: 5px;
+    &--input {
+      margin-top: 20px;
+      //margin-bottom: 20px;
+    }
+
     &--link {
-      margin-bottom: 30px;
+      margin-top: 10px;
+    }
+
+    &--button {
+      margin-top: 30px;
     }
   }
 

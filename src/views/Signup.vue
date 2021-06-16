@@ -13,13 +13,42 @@
       </section>
 
       <form class="card__form">
-        <Button variant="primary">Sign up</Button>
+        <FormGroup label="Email" label-for="email" class="card__form--input">
+          <FormInput
+            id="email"
+            v-model="email"
+            input-type="email"
+            required
+            placeholder="example@email.com"
+            :state="isEmailValid"
+          ></FormInput>
+        </FormGroup>
+
+        <FormGroup
+          label="Password"
+          label-for="password"
+          class="card__form--input"
+          feedback="Minimun 8 characters"
+          :state="isPasswordValid"
+        >
+          <FormPassword
+            id="password"
+            v-model="password"
+            :state="isPasswordValid"
+            required
+          ></FormPassword>
+        </FormGroup>
+
+        <Button
+          :disabled="!isFormValid"
+          class="card__form--button"
+          variant="primary"
+          >sign up</Button
+        >
       </form>
     </Card>
   </section>
 </template>
-
-<style lang="scss"></style>
 
 <script>
 import Card from "@/components/Card/Card";
@@ -27,7 +56,39 @@ import Title from "@/components/texts/Title/Title";
 import Subheading from "@/components/texts/Subheading/Subheading";
 import Link from "@/components/Actions/Link/Link";
 import Button from "@/components/Actions/Button/Button";
+import FormInput from "@/components/forms/FormInput/FormInput";
+import FormPassword from "@/components/forms/FormPassword";
+import FormGroup from "@/components/forms/FormGroup/FormGroup";
+
+import { emailValidator, newPasswordValidator } from "@/utils/validation";
+
 export default {
-  components: { Button, Link, Subheading, Title, Card },
+  components: {
+    FormInput,
+    FormPassword,
+    FormGroup,
+    Button,
+    Link,
+    Subheading,
+    Title,
+    Card,
+  },
+  data: () => {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  computed: {
+    isEmailValid() {
+      return this.email ? emailValidator(this.email) : null;
+    },
+    isPasswordValid() {
+      return this.password ? newPasswordValidator(this.password) : null;
+    },
+    isFormValid() {
+      return this.isEmailValid && this.isPasswordValid;
+    },
+  },
 };
 </script>
