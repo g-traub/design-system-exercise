@@ -26,12 +26,10 @@ export default {
 @import "../../../assets/scss/utils/vars/typography";
 
 .link {
-
   &__content {
     color: $primary;
     display: flex;
     align-items: center;
-
 
     &:hover,
     &:visited,
