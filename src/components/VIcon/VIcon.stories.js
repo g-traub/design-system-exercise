@@ -13,12 +13,27 @@ const Template = (args) => {
         args,
       };
     },
-    template: "<VIcon>{{args.text}}</VIcon>",
+    template:
+      '<VIcon :name="args.name" :size="args.size" :stroke-width="args.strokeWidth"></VIcon>',
   };
 };
 
-// export const SubheadingContent = Template.bind({});
-// SubheadingContent.label = "Subheading";
-// SubheadingContent.args = {
-//   text: "A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team",
-// };
+export const VIconContent = Template.bind({});
+VIconContent.label = "VIcon";
+VIconContent.args = {
+  name: "arrow-left",
+};
+
+export const VIconStrokeWidthContent = Template.bind({});
+VIconStrokeWidthContent.label = "VIcon Stroke Width";
+VIconStrokeWidthContent.args = {
+  name: "arrow-left",
+  strokeWidth: "5",
+};
+
+export const VIconSizeContent = Template.bind({});
+VIconSizeContent.label = "VIcon Size";
+VIconSizeContent.args = {
+  name: "arrow-left",
+  size: 64,
+};
