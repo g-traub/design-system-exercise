@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <input
-      :id="id"
+      :id="$attrs.id"
       :class="inputClasses"
       :value="modelValue"
-      :type="type"
+      :type="inputType"
       :required="required"
       :disabled="disabled"
       :placeholder="placeholder"
@@ -13,7 +13,11 @@
       :aria-invalid="isInputInvalid"
       @input="$emit('update:modelValue', $event.target.value)"
     />
-    <VIcon class="icon" :name="iconName" :size="18" />
+    <div class="icon-container">
+      <slot name="icon">
+        <VIcon class="icon" :name="iconName" :size="18" />
+      </slot>
+    </div>
   </div>
 </template>
 
@@ -24,12 +28,9 @@ const TYPES = ["text", "password", "email", "url", "search"];
 
 export default {
   name: "FormInput",
+  inheritAttrs: false,
   props: {
     modelValue: {
-      type: String,
-      required: true,
-    },
-    id: {
       type: String,
       required: true,
     },
@@ -43,7 +44,7 @@ export default {
       type: String,
       default: "",
     },
-    type: {
+    inputType: {
       type: String,
       default: "text",
       validator: (value) => TYPES.includes(value),
@@ -103,7 +104,7 @@ export default {
   max-width: 320px;
 }
 
-.icon {
+.icon-container {
   position: absolute;
   right: $spacer--2;
   top: 50%;

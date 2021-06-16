@@ -18,7 +18,7 @@
           <FormInput
             id="email"
             v-model="email"
-            type="email"
+            input-type="email"
             required
             placeholder="example@email.com"
             :state="isEmailValid"

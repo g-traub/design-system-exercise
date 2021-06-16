@@ -17,7 +17,7 @@
           <FormInput
             id="email"
             v-model="email"
-            type="email"
+            input-type="email"
             required
             placeholder="example@email.com"
             :state="isEmailValid"
@@ -31,14 +31,12 @@
           feedback="Minimun 8 characters"
           :state="isPasswordValid"
         >
-          <FormInput
+          <FormPassword
             id="password"
             v-model="password"
-            type="password"
-            required
-            placeholder=""
             :state="isPasswordValid"
-          ></FormInput>
+            required
+          ></FormPassword>
         </FormGroup>
 
         <Button
@@ -59,12 +57,22 @@ import Subheading from "@/components/texts/Subheading";
 import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
 import FormInput from "@/components/forms/FormInput";
+import FormPassword from "@/components/forms/FormPassword";
 import FormGroup from "@/components/forms/FormGroup";
 
 import { emailValidator, newPasswordValidator } from "@/utils/validation";
 
 export default {
-  components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
+  components: {
+    FormInput,
+    FormPassword,
+    FormGroup,
+    Button,
+    Link,
+    Subheading,
+    Title,
+    Card,
+  },
   data: () => {
     return {
       email: "",

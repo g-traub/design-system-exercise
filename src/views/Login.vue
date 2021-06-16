@@ -17,7 +17,7 @@
           <FormInput
             id="email"
             v-model="email"
-            type="email"
+            input-type="email"
             required
             placeholder="example@email.com"
             :state="isEmailValid"
@@ -29,12 +29,12 @@
           label-for="password"
           class="card__form--input"
         >
-          <FormInput
+          <FormPassword
             id="password"
             v-model="password"
             type="password"
             required
-          ></FormInput>
+          ></FormPassword>
         </FormGroup>
 
         <Link class="card__form--link" to="/login/reset-password"
@@ -59,10 +59,20 @@ import Link from "@/components/buttons/Link";
 import Button from "@/components/buttons/Button";
 import FormGroup from "@/components/forms/FormGroup";
 import FormInput from "@/components/forms/FormInput";
+import FormPassword from "@/components/forms/FormPassword";
 import { emailValidator } from "@/utils/validation";
 
 export default {
-  components: { FormInput, FormGroup, Button, Link, Subheading, Title, Card },
+  components: {
+    FormInput,
+    FormPassword,
+    FormGroup,
+    Button,
+    Link,
+    Subheading,
+    Title,
+    Card,
+  },
   data: () => {
     return {
       email: "",
